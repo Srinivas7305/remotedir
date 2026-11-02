@@ -1,10 +1,9 @@
 pipeline {
    agent any
     stages {
-    stage ('windows') {
+    stage ('Build') {
       steps {
-      bat 'echo hello'
-         bat 'cd'
+      echo 'Building an application'
       }
     }
   }
