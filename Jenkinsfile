@@ -1,10 +1,24 @@
 pipeline {
-   agent any
+   agent {
+      label 'linux'
+   }
     stages {
-    stage ('Build') {
+    stage ('showinput') {
       steps {
-      echo 'Building an application'
+     script {
+        def branchName = env.BRANCHNAME
+        echo "branch name ${branchName}"
+
+        if (branchName == 'main) {
+            echo "production"
+        }
+            else if (branchName == 'develop') {
+               echo "RUN UAT"
+            }else {
+               echo "validation"
+            }
       }
     }
   }
 }
+            }
