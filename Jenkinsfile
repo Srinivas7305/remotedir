@@ -1,13 +1,13 @@
 pipeline {
-  agent none
+  agent {
+    label'windows'
+  }
   stages {
-    stage('windows') {
-      agent { label 'windows' }
-      steps { sh 'uname -a' }
-    }
-    stage('Windows check') {
-      agent { label 'windows' }
-      steps { bat 'ver' }
+    stage('Windows command') {
+      steps { 
+        bat 'echo Hello from windows'
+        bat 'whoami'
+      }
     }
   }
 }
