@@ -8,10 +8,10 @@ pipeline {
 
       }
      }
-      
+      stages ('Tests') {
+        parallel {
     stage ('unit test') {
     steps {
-      sh 'sleep 3'
     echo "This is Unit Test"
     }
     }
@@ -25,6 +25,8 @@ pipeline {
       echo "This is UI Test"
     }
     }
+  }
+}
   }
 }
     
