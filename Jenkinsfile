@@ -1,6 +1,8 @@
 pipeline {
    agent {
-      label 'linux'
+      docker {
+         image 'alpine:3.20'
+      }
    }
     stages {
     stage ('showinput') {
