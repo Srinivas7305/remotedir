@@ -12,7 +12,7 @@ pipeline {
         parallel {
     stage ('unit test') {
     steps {
-    echo "This is Unit Test"
+    echo "This is a Unit Test"
     }
     }
     stage ('App Test') {
