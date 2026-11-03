@@ -11,6 +11,7 @@ pipeline {
       
     stage ('unit test') {
     steps {
+      sh 'sleep 3'
     echo "This is Unit Test"
     }
     }
