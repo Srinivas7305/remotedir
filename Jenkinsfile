@@ -6,7 +6,7 @@ pipeline {
     stage('Windows command') {
       steps { 
         bat 'echo Hello from windows'
-        bat 'whoami'
+      bat 'whoami'
       }
     }
   }
