@@ -1,15 +1,26 @@
 pipeline {
-  agent {
-    label 'windows'
-    
-  }
-  
+  agent none
+
   stages {
-    stage ('Windows command') {
+    stage ('windows Stage') {
+      agent {
+        label 'windows'
+     }
       steps { 
         bat 'echo Hello from windows'
       bat 'whoami'
+        
       }
+    }
+
+    stage ('Linux stage') {
+      agent {
+        label 'linux'
+  }
+      steps {
+        sh 'echo Hello from Linux'
+        sh 'whoami'
+}
     }
   }
 }
