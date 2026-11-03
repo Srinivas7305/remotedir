@@ -11,7 +11,7 @@ pipeline {
         def branchName = env.BRANCHNAME
         echo "branch name ${branchName}"
 
-        if (branchName == 'main) {
+        if (branchName == 'main') {
             echo "production"
         }
             else if (branchName == 'develop') {
