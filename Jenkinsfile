@@ -1,26 +1,29 @@
 pipeline {
-  agent none
+  agent any
 
   stages {
-    stage ('windows Stage') {
+    stage ('Build') {
       agent {
-        label 'windows'
-     }
-      steps { 
-        bat 'echo Hello from windows'
-      bat 'whoami'
-        
-      }
-    }
+        echo "This is a build stage"
 
-    stage ('Linux stage') {
-      agent {
-        label 'linux'
-  }
-      steps {
-        sh 'echo Hello from Linux'
-        sh 'whoami'
-}
+      }
+     }
+      
+    stage ('unit test') {
+    steps {
+    echo "This is Unit Test
+    }
+    }
+    stage ('App Test') {
+    steps {
+      echo "This is a App Test"
+    }
+    }
+      stage ('UI Test') {
+    steps {
+      echo "This is a UI Test"
+    }
     }
   }
 }
+    
