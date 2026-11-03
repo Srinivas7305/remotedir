@@ -3,7 +3,7 @@ pipeline {
 
   stages {
     stage ('Build') {
-      agent {
+      steps {
         echo "This is a build stage"
 
       }
@@ -11,17 +11,17 @@ pipeline {
       
     stage ('unit test') {
     steps {
-    echo "This is Unit Test
+    echo "This is Unit Test"
     }
     }
     stage ('App Test') {
     steps {
-      echo "This is a App Test"
+      echo "This is App Test"
     }
     }
       stage ('UI Test') {
     steps {
-      echo "This is a UI Test"
+      echo "This is UI Test"
     }
     }
   }
